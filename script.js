@@ -275,3 +275,154 @@
     }
   });
 })();
+
+/* ═══════════════════════════════════════════════════════════════
+   ROI Calculator
+   ═══════════════════════════════════════════════════════════════ */
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const roi = $('#roi');
+  if (!roi) return;
+
+  /* Therapy area modifiers (multiplicative on base funnel rates)
+     Derived from report findings. Deliberately modest. */
+  const TA = {
+    autoimmune: { click: 1.00, match: 0.95, engage: 1.00, action: 1.05, hint: 'Autoimmune patients delay biologics an avg. of 4.2 months after Rx.' },
+    surgical:   { click: 1.05, match: 1.00, engage: 1.10, action: 1.15, hint: '"When did you really feel normal?" asked in 71% of pre-surgical conversations.' },
+    womens:     { click: 1.00, match: 1.05, engage: 1.10, action: 1.00, hint: '43% of women\'s health conversations start with "I feel alone in this."' },
+    diabetes:   { click: 0.95, match: 0.90, engage: 0.95, action: 0.90, hint: 'Highest resistance to initiation. Mentor storytelling has 2.1× engagement.' },
+    oncology:   { click: 1.00, match: 1.00, engage: 1.15, action: 1.10, hint: '91% of oncology conversations include explicit expressions of fear.' },
+    devices:    { click: 1.05, match: 1.00, engage: 1.05, action: 1.10, hint: 'Most questions per conversation: 4.7 avg. Decision complexity drives deliberation.' },
+    other:      { click: 1.00, match: 1.00, engage: 1.00, action: 1.00, hint: 'Based on the cross-therapy-area average from 7,823 conversations.' },
+  };
+
+  /* Base conversion rates derived from PatientPartner benchmark:
+     50,000 visitors → 375 click-through → 150 matches → 75 engaged → 53 initiated */
+  const BASE = {
+    clickRate:   0.0075,   // 0.75% of visitors
+    matchRate:   0.40,     // 40% of click-throughs
+    engageRate:  0.50,     // 50% of matches
+    actionRate:  0.707,    // ~71% of engaged (53/75)
+  };
+
+  const el = {
+    ta:       $('#roi-ta'),
+    taHint:   $('#roi-ta-hint'),
+    visitors: $('#roi-visitors'),
+    vVal:     $('#roi-visitors-val'),
+    revenue:  $('#roi-revenue'),
+    rVal:     $('#roi-revenue-val'),
+    cost:     $('#roi-cost'),
+    cVal:     $('#roi-cost-val'),
+    clicks:    $('#roi-clicks'),
+    matches:   $('#roi-matches'),
+    engaged:   $('#roi-engaged'),
+    initiated: $('#roi-initiated'),
+    revOut:   $('#roi-revenue-out'),
+    net:      $('#roi-net'),
+    mult:     $('#roi-multiple'),
+  };
+
+  const fmt = {
+    num:   (n) => Math.round(n).toLocaleString('en-US'),
+    money: (n) => '$' + Math.round(n).toLocaleString('en-US'),
+    moneyShort: (n) => {
+      const v = Math.round(n);
+      if (Math.abs(v) >= 1_000_000) return '$' + (v/1_000_000).toFixed(2).replace(/\.?0+$/,'') + 'M';
+      if (Math.abs(v) >= 1_000)     return '$' + (v/1_000).toFixed(0) + 'K';
+      return '$' + v.toLocaleString('en-US');
+    },
+  };
+
+  const compute = () => {
+    const ta = TA[el.ta.value] || TA.other;
+    const visitors = +el.visitors.value;
+    const rev = +el.revenue.value;
+    const cost = +el.cost.value;
+
+    const clicks    = visitors * BASE.clickRate  * ta.click;
+    const matches   = clicks   * BASE.matchRate  * ta.match;
+    const engaged   = matches  * BASE.engageRate * ta.engage;
+    const initiated = engaged  * BASE.actionRate * ta.action;
+
+    const annualRev = initiated * 12 * rev;
+    const net = annualRev - cost;
+    const multiple = cost > 0 ? annualRev / cost : 0;
+
+    // Update sliders display
+    el.vVal.textContent = fmt.num(visitors);
+    el.rVal.textContent = fmt.money(rev);
+    el.cVal.textContent = fmt.money(cost);
+
+    // Update funnel
+    el.clicks.textContent    = fmt.num(clicks);
+    el.matches.textContent   = fmt.num(matches);
+    el.engaged.textContent   = fmt.num(engaged);
+    el.initiated.textContent = fmt.num(initiated);
+
+    // Update totals
+    el.revOut.textContent = fmt.moneyShort(annualRev);
+    el.net.textContent    = (net < 0 ? '−' : '') + fmt.moneyShort(Math.abs(net));
+    el.mult.textContent   = multiple.toFixed(1) + '× return';
+
+    // Bar widths — relative to clicks
+    const setBar = (id, ratio) => {
+      const bar = document.querySelector(`#${id}`).closest('.roi__stage').querySelector('.roi__stage-fill');
+      if (bar) bar.style.width = (ratio * 100).toFixed(1) + '%';
+    };
+    const maxClicks = Math.max(clicks, 1);
+    setBar('roi-clicks',    1);
+    setBar('roi-matches',   matches / maxClicks);
+    setBar('roi-engaged',   engaged / maxClicks);
+    setBar('roi-initiated', initiated / maxClicks);
+
+    // Update hint
+    if (el.taHint) el.taHint.textContent = ta.hint;
+  };
+
+  ['input', 'change'].forEach(evt => {
+    el.ta.addEventListener(evt, compute);
+    el.visitors.addEventListener(evt, compute);
+    el.revenue.addEventListener(evt, compute);
+    el.cost.addEventListener(evt, compute);
+  });
+
+  compute();
+})();
+
+/* ═══════════════════════════════════════════════════════════════
+   Sticky side section navigator
+   ═══════════════════════════════════════════════════════════════ */
+(() => {
+  const sidenav = document.getElementById('sidenav');
+  if (!sidenav) return;
+  const items = Array.from(sidenav.querySelectorAll('.sidenav__item'));
+  const mapping = items.map(a => ({ link: a, target: document.querySelector(a.getAttribute('href')) })).filter(m => m.target);
+
+  /* Show sidenav only after hero */
+  const hero = document.querySelector('.hero');
+  if (hero && 'IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => sidenav.classList.toggle('is-visible', !e.isIntersecting));
+    }, { threshold: 0, rootMargin: '-80% 0px 0px 0px' });
+    obs.observe(hero);
+  } else {
+    sidenav.classList.add('is-visible');
+  }
+
+  /* Active-dot spy */
+  if ('IntersectionObserver' in window) {
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const match = mapping.find(m => m.target === entry.target);
+          if (match) {
+            items.forEach(i => i.classList.remove('is-active'));
+            match.link.classList.add('is-active');
+          }
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    mapping.forEach(m => spy.observe(m.target));
+  }
+})();

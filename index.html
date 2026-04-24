@@ -5,6 +5,19 @@
 <title>What Patients Actually Say — 2026 Sentiment Report · PatientPartner</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="A sentiment analysis of 7,823 mentor–patient conversations. What patients share when they feel safe enough to be honest." />
+
+<!-- Open Graph / LinkedIn -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="What Patients Actually Say — 2026 Sentiment Report" />
+<meta property="og:description" content="84% of patients withhold a concern from their prescriber. Here's what they say when they feel safe enough to be honest. Based on 7,823 mentor conversations." />
+<meta property="og:image" content="og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="PatientPartner" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="What Patients Actually Say — 2026 Sentiment Report" />
+<meta name="twitter:description" content="84% of patients withhold a concern from their prescriber. Here's what they say when they feel safe enough to be honest." />
+<meta name="twitter:image" content="og-image.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" />
@@ -14,6 +27,21 @@
 
 <!-- ── Scroll progress bar ── -->
 <div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ── Sticky side section navigator (desktop only) ── -->
+<nav class="sidenav" id="sidenav" aria-label="Section navigator">
+  <a href="#top" class="sidenav__item" data-sidenav="top" title="Top"><span class="sidenav__label">Top</span></a>
+  <a href="#summary" class="sidenav__item" data-sidenav="summary" title="Executive summary"><span class="sidenav__label">Summary</span></a>
+  <a href="#gap" class="sidenav__item" data-sidenav="gap" title="The Gap"><span class="sidenav__label">Finding 01 · The Gap</span></a>
+  <a href="#fears" class="sidenav__item" data-sidenav="fears" title="Fear hierarchy"><span class="sidenav__label">Finding 02 · Fears</span></a>
+  <a href="#timeline" class="sidenav__item" data-sidenav="timeline" title="Decision timeline"><span class="sidenav__label">Finding 03 · Timeline</span></a>
+  <a href="#shift" class="sidenav__item" data-sidenav="shift" title="Sentiment shift"><span class="sidenav__label">Finding 04 · Shift</span></a>
+  <a href="#questions" class="sidenav__item" data-sidenav="questions" title="Predictive questions"><span class="sidenav__label">Finding 05 · Questions</span></a>
+  <a href="#testimonials" class="sidenav__item" data-sidenav="testimonials" title="Clients"><span class="sidenav__label">Clients</span></a>
+  <a href="#roi" class="sidenav__item" data-sidenav="roi" title="ROI calculator"><span class="sidenav__label">ROI</span></a>
+  <a href="#faq" class="sidenav__item" data-sidenav="faq" title="FAQ"><span class="sidenav__label">FAQ</span></a>
+  <a href="#cta" class="sidenav__item" data-sidenav="cta" title="Book a demo"><span class="sidenav__label">Book a demo</span></a>
+</nav>
 
 <!-- ── Sticky nav ── -->
 <nav class="nav" id="nav">
@@ -27,9 +55,10 @@
       <a href="#timeline" data-nav>Timeline</a>
       <a href="#shift" data-nav>Shift</a>
       <a href="#questions" data-nav>Questions</a>
-      <a href="#implications" data-nav>Implications</a>
+      <a href="#testimonials" data-nav>Clients</a>
+      <a href="#roi" data-nav>ROI</a>
     </div>
-    <a href="#cta" class="nav__cta">Book a demo</a>
+    <a href="https://patientpartner.schedulehero.io/campaign/george-kramb?utm_source=sentiment-report&amp;utm_medium=lead-mag&amp;utm_campaign=nav" target="_blank" rel="noopener" class="nav__cta">Book a demo</a>
     <button class="nav__menu" id="navMenu" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -44,7 +73,10 @@
   <div class="hero__mark" aria-hidden="true">P</div>
 
   <div class="wrap">
-    <div class="hero__kicker"><span class="eyebrow eyebrow--mint">Research report · 2026 Sentiment Report</span></div>
+    <div class="hero__kicker">
+      <span class="eyebrow eyebrow--mint">Research report · 2026 Sentiment Report</span>
+      <span class="hero__meta"><span class="hero__meta-dot"></span>12 min read &middot; Updated April 2026</span>
+    </div>
 
     <h1 class="hero__title">
       <span class="reveal-line">What patients</span>
@@ -57,7 +89,7 @@
 
     <div class="hero__actions">
       <a href="#summary" class="btn btn--mint">Read the report <span class="btn__arrow">↓</span></a>
-      <a href="#cta" class="btn btn--ghost">Book a demo</a>
+      <a href="https://patientpartner.schedulehero.io/campaign/george-kramb?utm_source=sentiment-report&amp;utm_medium=lead-mag&amp;utm_campaign=hero" target="_blank" rel="noopener" class="btn btn--ghost">Book a demo</a>
     </div>
 
     <div class="hero__stats">
@@ -97,6 +129,16 @@
       Just not <em>to&nbsp;you.</em>
     </h2>
 
+    <div class="tldr reveal">
+      <div class="tldr__label">If you only read this</div>
+      <ul class="tldr__list">
+        <li><span class="tldr__num">84%</span> of patients withhold a concern from their prescriber — the ones that actually predict adherence.</li>
+        <li><span class="tldr__num">72&nbsp;hrs</span> is the median time from first mentor conversation to treatment decision. Not 72 days.</li>
+        <li><span class="tldr__num">Zero</span> of the top 10 questions that predict conversion are clinical. All are experiential.</li>
+        <li><span class="tldr__num">69 days</span> faster to initiation for patients connected to a peer mentor vs. those who aren't.</li>
+      </ul>
+    </div>
+
     <div class="summary__grid">
       <div class="summary__body reveal">
         <p class="p--lead">
@@ -134,6 +176,14 @@
         Non-adherence costs the U.S. healthcare system <strong>$100–300&nbsp;billion annually</strong> and contributes to <strong>125,000 preventable deaths per year.</strong> Most patient support programs answer the questions patients are comfortable asking in clinical settings — not the ones that actually drive adherence.
       </p>
     </div>
+
+    <aside class="inline-cta reveal">
+      <div>
+        <div class="inline-cta__eyebrow">See it in your therapy area</div>
+        <p class="inline-cta__hook">The concerns your patients don't voice in clinic are the ones that predict whether they stay on therapy. <strong>We surface them.</strong></p>
+      </div>
+      <a class="inline-cta__btn" href="https://patientpartner.schedulehero.io/campaign/george-kramb?utm_source=sentiment-report&amp;utm_medium=lead-mag&amp;utm_campaign=summary" target="_blank" rel="noopener">See your gap</a>
+    </aside>
   </div>
 </section>
 
@@ -310,6 +360,14 @@
         </div>
       </div>
     </div>
+
+    <aside class="inline-cta reveal">
+      <div>
+        <div class="inline-cta__eyebrow">What your PSP isn't hearing</div>
+        <p class="inline-cta__hook">You have the clinical data. What you're missing is what patients say <strong>when the white coat isn't in the room.</strong></p>
+      </div>
+      <a class="inline-cta__btn" href="https://patientpartner.schedulehero.io/campaign/george-kramb?utm_source=sentiment-report&amp;utm_medium=lead-mag&amp;utm_campaign=gap" target="_blank" rel="noopener">See it in action</a>
+    </aside>
   </div>
 </section>
 
@@ -418,6 +476,14 @@
     <div class="pull reveal">
       Patients who express fears #1 or #2 without peer validation are <strong>3.4× more likely</strong> to delay treatment beyond 90 days — <strong>97 days</strong> unconnected vs. <strong>28 days</strong> with a mentor.
     </div>
+
+    <aside class="inline-cta reveal">
+      <div>
+        <div class="inline-cta__eyebrow">How mentor matching works</div>
+        <p class="inline-cta__hook">We match mentors to patients based on these exact fear signatures — <strong>including the ones your PSP never hears.</strong></p>
+      </div>
+      <a class="inline-cta__btn" href="https://patientpartner.schedulehero.io/campaign/george-kramb?utm_source=sentiment-report&amp;utm_medium=lead-mag&amp;utm_campaign=fears" target="_blank" rel="noopener">See the matching engine</a>
+    </aside>
   </div>
 </section>
 
@@ -508,6 +574,14 @@
       <blockquote class="quote__text">It's very difficult to open up to loved ones. But with someone who's been through it, you can just… be honest. They already know.</blockquote>
       <figcaption class="quote__attrib">Peer support study participant · Frontiers in Psychology, 2026</figcaption>
     </figure>
+
+    <aside class="inline-cta reveal">
+      <div>
+        <div class="inline-cta__eyebrow">Mapped to your therapy area</div>
+        <p class="inline-cta__hook">Different therapy areas, different fear patterns. <strong>Want to see yours mapped against our full dataset?</strong></p>
+      </div>
+      <a class="inline-cta__btn" href="https://patientpartner.schedulehero.io/campaign/george-kramb?utm_source=sentiment-report&amp;utm_medium=lead-mag&amp;utm_campaign=therapy" target="_blank" rel="noopener">Walk through yours</a>
+    </aside>
   </div>
 </section>
 
@@ -581,6 +655,14 @@
         <div class="compare__delta">69-day reduction</div>
       </div>
     </div>
+
+    <aside class="inline-cta reveal">
+      <div>
+        <div class="inline-cta__eyebrow">Built for the 14–45 day window</div>
+        <p class="inline-cta__hook">Most PSPs miss the Deliberation Window. <strong>Our engagement cadence is built around it.</strong></p>
+      </div>
+      <a class="inline-cta__btn" href="https://patientpartner.schedulehero.io/campaign/george-kramb?utm_source=sentiment-report&amp;utm_medium=lead-mag&amp;utm_campaign=timeline" target="_blank" rel="noopener">See the playbook</a>
+    </aside>
   </div>
 </section>
 
@@ -678,6 +760,14 @@
         <p class="p--small">A separate analysis of <strong>492,495 chronic disease community posts</strong> found that emotional support was the #1 activity (20.6% of posts), surpassing information-seeking.</p>
       </div>
     </div>
+
+    <aside class="inline-cta reveal">
+      <div>
+        <div class="inline-cta__eyebrow">Measure your cohort</div>
+        <p class="inline-cta__hook">We can run this same analysis on a sample of your patient cohort — <strong>before you commit to anything.</strong></p>
+      </div>
+      <a class="inline-cta__btn" href="https://patientpartner.schedulehero.io/campaign/george-kramb?utm_source=sentiment-report&amp;utm_medium=lead-mag&amp;utm_campaign=shift" target="_blank" rel="noopener">Request a sample</a>
+    </aside>
   </div>
 </section>
 
@@ -790,6 +880,14 @@
         When a patient asks <strong>"Is it worth it?"</strong>, conversion is <strong>86%</strong>. None of the top 10 predictive questions are about mechanism of action or trial data — all are <em>experiential</em>. The content that moves patients isn't content. It's conversation.
       </p>
     </div>
+
+    <aside class="inline-cta reveal">
+      <div>
+        <div class="inline-cta__eyebrow">847 questions. These are 10.</div>
+        <p class="inline-cta__hook">This is 10 of our full 847-question taxonomy. <strong>See which ones your brand should be answering.</strong></p>
+      </div>
+      <a class="inline-cta__btn" href="https://patientpartner.schedulehero.io/campaign/george-kramb?utm_source=sentiment-report&amp;utm_medium=lead-mag&amp;utm_campaign=questions" target="_blank" rel="noopener">See the full taxonomy</a>
+    </aside>
   </div>
 </section>
 
@@ -862,6 +960,50 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════
+     TESTIMONIALS
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="section section--light" id="testimonials" data-section="Trusted clients">
+  <div class="wrap">
+    <div class="eyebrow reveal">Trusted clients</div>
+    <h2 class="h1 reveal">
+      The patient support leaders <em>already&nbsp;doing&nbsp;this.</em>
+    </h2>
+    <p class="kicker reveal">
+      The data above isn't theoretical. It's the pattern our clients are already seeing — and acting on — in their own programs.
+    </p>
+
+    <hr class="divider-strong reveal" />
+
+    <div class="testimonials">
+      <figure class="t-card reveal">
+        <div class="t-card__mark" aria-hidden="true">&ldquo;</div>
+        <blockquote class="t-card__quote">Patient Partner is a unicorn in the industry, setting a new standard with their clear dedication to the mission of positively impacting patients' lives through innovation and compassionate support.</blockquote>
+        <figcaption class="t-card__attrib">
+          <div class="t-card__name">Melissa B.</div>
+          <div class="t-card__title">Sobi Pharmaceuticals</div>
+        </figcaption>
+      </figure>
+      <figure class="t-card reveal">
+        <div class="t-card__mark" aria-hidden="true">&ldquo;</div>
+        <blockquote class="t-card__quote">Patient Partner has been influential in helping patients understand the benefits of our product, providing them with personalized guidance and real-life experiences to support their decision-making.</blockquote>
+        <figcaption class="t-card__attrib">
+          <div class="t-card__name">Brad A.</div>
+          <div class="t-card__title">Mainstay Medical</div>
+        </figcaption>
+      </figure>
+      <figure class="t-card reveal">
+        <div class="t-card__mark" aria-hidden="true">&ldquo;</div>
+        <blockquote class="t-card__quote">We knew patient trust was shifting, but seeing just how dramatically patients now prefer peer-to-peer engagement over traditional methods is a game-changer for our upcoming strategies.</blockquote>
+        <figcaption class="t-card__attrib">
+          <div class="t-card__name">Sara W.</div>
+          <div class="t-card__title">Marketing Director · Rare Disease</div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
      IMPLICATIONS (accordion)
      ═══════════════════════════════════════════════════════════════ -->
 <section class="section section--cream" id="implications" data-section="Implications">
@@ -922,6 +1064,231 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════
+     ROI CALCULATOR — "Estimate your impact"
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="section section--cream" id="roi" data-section="Estimate your impact">
+  <div class="wrap">
+    <div class="section-num reveal">Estimate your impact</div>
+    <h2 class="h1 reveal">
+      What would this <em>look like for you?</em>
+    </h2>
+    <p class="kicker reveal">
+      Use the inputs below to map this report's benchmarks onto your therapy area and program scale. No email required — the numbers are yours to keep.
+    </p>
+
+    <hr class="divider-strong reveal" />
+
+    <div class="roi reveal">
+      <div class="roi__inputs">
+        <div class="roi__input">
+          <label class="roi__label" for="roi-ta">Your therapy area</label>
+          <select class="roi__select" id="roi-ta">
+            <option value="autoimmune">Autoimmune / Biologics</option>
+            <option value="surgical">Surgical procedures</option>
+            <option value="womens">Women's health</option>
+            <option value="diabetes">Type 2 diabetes</option>
+            <option value="oncology">Oncology support</option>
+            <option value="devices">Medical devices</option>
+            <option value="other">Other / multi-therapy</option>
+          </select>
+          <div class="roi__hint" id="roi-ta-hint">Autoimmune patients delay biologics an avg. of 4.2 months after Rx.</div>
+        </div>
+
+        <div class="roi__input">
+          <label class="roi__label" for="roi-visitors">Monthly program visitors</label>
+          <div class="roi__slider-row">
+            <input type="range" class="roi__slider" id="roi-visitors" min="10000" max="500000" step="5000" value="50000" />
+            <div class="roi__slider-value" id="roi-visitors-val">50,000</div>
+          </div>
+          <div class="roi__hint">Unique visitors to your patient-facing program or brand site.</div>
+        </div>
+
+        <div class="roi__input">
+          <label class="roi__label" for="roi-revenue">Avg. revenue per initiated patient</label>
+          <div class="roi__slider-row">
+            <input type="range" class="roi__slider" id="roi-revenue" min="500" max="25000" step="250" value="2500" />
+            <div class="roi__slider-value" id="roi-revenue-val">$2,500</div>
+          </div>
+          <div class="roi__hint">Rough annualized LTV. If unsure, the default (industry median) works fine.</div>
+        </div>
+
+        <div class="roi__input">
+          <label class="roi__label" for="roi-cost">Annual program investment</label>
+          <div class="roi__slider-row">
+            <input type="range" class="roi__slider" id="roi-cost" min="50000" max="1000000" step="25000" value="300000" />
+            <div class="roi__slider-value" id="roi-cost-val">$300,000</div>
+          </div>
+          <div class="roi__hint">Total PatientPartner program cost you'd budget for the year.</div>
+        </div>
+      </div>
+
+      <div class="roi__output">
+        <div class="roi__output-header">Your estimated impact</div>
+
+        <div class="roi__funnel">
+          <div class="roi__stage">
+            <div class="roi__stage-label">Click-throughs / mo</div>
+            <div class="roi__stage-num" id="roi-clicks">375</div>
+            <div class="roi__stage-bar"><div class="roi__stage-fill" style="width: 100%"></div></div>
+          </div>
+          <div class="roi__stage">
+            <div class="roi__stage-label">Mentor matches / mo</div>
+            <div class="roi__stage-num" id="roi-matches">150</div>
+            <div class="roi__stage-bar"><div class="roi__stage-fill" style="width: 40%"></div></div>
+          </div>
+          <div class="roi__stage">
+            <div class="roi__stage-label">Active engagement / mo</div>
+            <div class="roi__stage-num" id="roi-engaged">75</div>
+            <div class="roi__stage-bar"><div class="roi__stage-fill" style="width: 20%"></div></div>
+          </div>
+          <div class="roi__stage roi__stage--key">
+            <div class="roi__stage-label">Patients initiated / mo</div>
+            <div class="roi__stage-num" id="roi-initiated">53</div>
+            <div class="roi__stage-bar"><div class="roi__stage-fill" style="width: 14%"></div></div>
+          </div>
+        </div>
+
+        <div class="roi__totals">
+          <div class="roi__total">
+            <div class="roi__total-label">Annual revenue recovered</div>
+            <div class="roi__total-num" id="roi-revenue-out">$1,590,000</div>
+          </div>
+          <div class="roi__total roi__total--hero">
+            <div class="roi__total-label">Net ROI</div>
+            <div class="roi__total-num" id="roi-net">$1,290,000</div>
+            <div class="roi__total-sub" id="roi-multiple">4.3× return</div>
+          </div>
+        </div>
+
+        <p class="roi__disclaimer">
+          Based on benchmarks from the <strong>7,823-conversation dataset</strong> in this report. Individual results vary by brand, therapy area, and program design. We're happy to walk you through the math.
+        </p>
+
+        <a class="btn btn--mint btn--lg roi__cta" href="https://patientpartner.schedulehero.io/campaign/george-kramb?utm_source=sentiment-report&amp;utm_medium=lead-mag&amp;utm_campaign=roi" target="_blank" rel="noopener">Turn this into a real plan <span class="btn__arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FROM THE CEO
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="section section--light ceo-note" id="ceo" data-section="From the founder">
+  <div class="wrap ceo-note__wrap">
+    <div class="ceo-note__photo reveal">
+      <img src="assets/ceo-george-kramb.webp" alt="George Kramb, Founder &amp; CEO of PatientPartner" />
+      <div class="ceo-note__stamp">
+        <div class="ceo-note__stamp-kicker">A note from</div>
+        <div class="ceo-note__stamp-name">George Kramb</div>
+        <div class="ceo-note__stamp-title">Founder &amp; CEO, PatientPartner</div>
+      </div>
+    </div>
+    <div class="ceo-note__body reveal">
+      <div class="eyebrow">From the desk of George Kramb</div>
+      <h2 class="h1" style="margin-top: 16px;">We built this report because we kept <em>hearing&nbsp;the&nbsp;same&nbsp;thing.</em></h2>
+      <p class="p--lead" style="margin-top: 20px;">
+        Every patient support leader I talk to knows something is off. Their programs look complete on paper — education, nurses, copay cards, outreach — but patients still disappear. Initiation rates plateau. Adherence curves go flat around month three. Nobody can quite point to why.
+      </p>
+      <p>
+        After analyzing <strong>7,823 mentor conversations</strong>, the pattern became impossible to miss: patients aren't dropping off because they don't have information. They're dropping off because the information they need isn't what anyone in a white coat can provide. They need to hear it from someone who's been there.
+      </p>
+      <p>
+        This report is the honest version of what we found. No product pitch, no hand-waving. If any of it resonates with what you're seeing in your own programs, I'd genuinely like to hear about it.
+      </p>
+      <p class="ceo-note__sig">— George</p>
+      <a class="btn btn--mint" href="https://patientpartner.schedulehero.io/campaign/george-kramb?utm_source=sentiment-report&amp;utm_medium=lead-mag&amp;utm_campaign=ceo-block" target="_blank" rel="noopener" style="margin-top: 16px;">Book 20 min with George <span class="btn__arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FAQ
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="section section--cream" id="faq" data-section="FAQ">
+  <div class="wrap">
+    <div class="eyebrow reveal">Before you book</div>
+    <h2 class="h1 reveal">
+      The questions we hear <em>most&nbsp;often.</em>
+    </h2>
+    <p class="kicker reveal">
+      If you're still weighing whether this is the right fit, start here. These are the real questions pharma and med-device leaders ask us on the first call.
+    </p>
+
+    <hr class="divider-strong reveal" />
+
+    <div class="faq">
+      <details class="faq__item reveal" open>
+        <summary class="faq__q">
+          <span>How does this fit alongside the PSP or engagement program we already have?</span>
+          <span class="faq__chev" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq__a">
+          <p>We don't replace your PSP — we sit alongside it. Your nurses, copay support, and education content handle the clinical conversations they're built for. PatientPartner handles the peer conversations your team simply can't (and shouldn't) have. Most clients integrate our mentor library as an add-on channel within their existing program flow, not a rebuild.</p>
+        </div>
+      </details>
+
+      <details class="faq__item reveal">
+        <summary class="faq__q">
+          <span>What does setup actually look like — how fast can we be live?</span>
+          <span class="faq__chev" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq__a">
+          <p>Typical implementation takes <strong>4–6 weeks</strong> from kickoff to first mentor conversations. That covers mentor recruiting, therapy-area training, compliance review, and integration with your existing intake flow. We do the heavy lifting — your team reviews and approves. Most of your internal bandwidth goes into the first two weeks; after that we run it.</p>
+        </div>
+      </details>
+
+      <details class="faq__item reveal">
+        <summary class="faq__q">
+          <span>Is this HIPAA-compliant and safe from a regulatory standpoint?</span>
+          <span class="faq__chev" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq__a">
+          <p>Yes. PatientPartner is <strong>HIPAA-compliant, SOC 2 certified, and built for regulated pharma/med-device environments</strong>. Every mentor is trained, vetted, and operates under documented guardrails. All conversations are logged, reviewable, and auditable. We've been through legal, medical, and regulatory review with some of the most conservative pharma brands — we'll walk your compliance team through every detail on the intro call.</p>
+        </div>
+      </details>
+
+      <details class="faq__item reveal">
+        <summary class="faq__q">
+          <span>How does pricing work — and how do we justify the ROI internally?</span>
+          <span class="faq__chev" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq__a">
+          <p>Programs are priced as an annual subscription based on therapy area, patient volume, and mentor engagement hours. Use the <a href="#roi" style="color: var(--teal); text-decoration: underline;">ROI calculator above</a> to pressure-test against your own numbers. In practice, most of our clients see payback inside the first 6 months driven by accelerated initiation alone — before counting the downstream adherence lift.</p>
+        </div>
+      </details>
+
+      <details class="faq__item reveal">
+        <summary class="faq__q">
+          <span>Will this drain internal bandwidth from my team?</span>
+          <span class="faq__chev" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq__a">
+          <p>Minimal. We provide the mentor network, the conversation infrastructure, and the reporting. Your team reviews quarterly dashboards, helps refine the mentor match criteria as the program matures, and joins strategic check-ins. Most clients spend <strong>&lt;2 hours / week</strong> on active program management after launch.</p>
+        </div>
+      </details>
+
+      <details class="faq__item reveal">
+        <summary class="faq__q">
+          <span>What therapy areas have the strongest data and track record?</span>
+          <span class="faq__chev" aria-hidden="true">+</span>
+        </summary>
+        <div class="faq__a">
+          <p>Our largest datasets are in <strong>autoimmune / biologics, surgical procedures, women's health, type 2 diabetes, oncology support, and medical devices</strong> — the six areas in this report. We've also run programs in rare disease, mental health, and gene therapy on a smaller scale. On the intro call we'll share which therapy-area benchmarks we can stand behind for your specific brand.</p>
+        </div>
+      </details>
+    </div>
+
+    <aside class="inline-cta reveal" style="margin-top: 48px;">
+      <div>
+        <div class="inline-cta__eyebrow">Still have questions?</div>
+        <p class="inline-cta__hook">20 minutes with our team is the fastest way to pressure-test whether this fits your program. <strong>No prep needed.</strong></p>
+      </div>
+      <a class="inline-cta__btn" href="https://patientpartner.schedulehero.io/campaign/george-kramb?utm_source=sentiment-report&amp;utm_medium=lead-mag&amp;utm_campaign=faq" target="_blank" rel="noopener">Book 20 min</a>
+    </aside>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
      CTA
      ═══════════════════════════════════════════════════════════════ -->
 <section class="section section--cta" id="cta" data-section="Book a demo">
@@ -937,7 +1304,7 @@
     </p>
 
     <div class="cta__actions reveal">
-      <a class="btn btn--mint btn--lg" href="https://patientpartner.com" target="_blank" rel="noreferrer">Book a demo <span class="btn__arrow">→</span></a>
+      <a class="btn btn--mint btn--lg" href="https://patientpartner.schedulehero.io/campaign/george-kramb?utm_source=sentiment-report&amp;utm_medium=lead-mag&amp;utm_campaign=cta-primary" target="_blank" rel="noopener">Book a demo <span class="btn__arrow">→</span></a>
       <a class="btn btn--ghost btn--lg" href="#methodology">Read the methodology</a>
     </div>
 
