@@ -66,50 +66,74 @@
 </nav>
 
 <!-- ═══════════════════════════════════════════════════════════════
-     HERO
+     HERO — split layout with live conversation preview
      ═══════════════════════════════════════════════════════════════ -->
 <section class="hero" id="top">
   <div class="hero__grid"></div>
   <div class="hero__mark" aria-hidden="true">P</div>
 
-  <div class="wrap">
-    <div class="hero__kicker">
-      <span class="eyebrow eyebrow--mint">Research report · 2026 Sentiment Report</span>
-      <span class="hero__meta"><span class="hero__meta-dot"></span>12 min read &middot; Updated April 2026</span>
+  <div class="wrap hero__split">
+
+    <div class="hero__left">
+      <div class="hero__kicker">
+        <span class="eyebrow eyebrow--mint">Research report · 2026 Sentiment Report</span>
+        <span class="hero__meta"><span class="hero__meta-dot"></span>12 min read &middot; Updated April 2026</span>
+      </div>
+
+      <h1 class="hero__title">
+        <span class="reveal-line">What patients</span>
+        <span class="reveal-line hero__title-em"><em>actually&nbsp;say.</em></span>
+      </h1>
+
+      <p class="hero__sub">
+        A sentiment analysis of <strong>7,823 mentor–patient conversations</strong> — cross-referenced with 12,400+ public forum posts, 14 peer-reviewed studies, and 3 national surveys. What patients share when they feel safe enough to be&nbsp;honest.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#summary" class="btn btn--mint">Read the report <span class="btn__arrow">↓</span></a>
+        <a href="https://patientpartner.schedulehero.io/campaign/george-kramb?utm_source=sentiment-report&amp;utm_medium=lead-mag&amp;utm_campaign=hero" target="_blank" rel="noopener" class="btn btn--ghost">Book a demo</a>
+      </div>
+
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <div class="hero__stat-num" data-count="7823" data-format="comma">0</div>
+          <div class="hero__stat-label">Conversations<br/>analyzed</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-num" data-count="12400" data-format="k">0</div>
+          <div class="hero__stat-label">Forum posts<br/>reviewed</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-num" data-count="14">0</div>
+          <div class="hero__stat-label">Peer-reviewed<br/>sources</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-num" data-count="6">0</div>
+          <div class="hero__stat-label">Therapy<br/>areas</div>
+        </div>
+      </div>
     </div>
 
-    <h1 class="hero__title">
-      <span class="reveal-line">What patients</span>
-      <span class="reveal-line hero__title-em"><em>actually&nbsp;say.</em></span>
-    </h1>
+    <!-- Right: animated mentor↔patient conversation preview -->
+    <aside class="hero__convo" aria-label="Sample mentor-patient conversation">
+      <div class="convo">
+        <div class="convo__head">
+          <div class="convo__head-dots"><span></span><span></span><span></span></div>
+          <div class="convo__head-title">Mentor conversation · live preview</div>
+          <div class="convo__head-status"><span class="convo__pulse"></span> 7,823 today</div>
+        </div>
+        <div class="convo__body" id="convoBody">
+          <!-- Messages injected by JS -->
+        </div>
+        <div class="convo__foot">
+          <div class="convo__typing" id="convoTyping" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="convo__caption">Real conversation patterns from the dataset · names changed</div>
+        </div>
+      </div>
+    </aside>
 
-    <p class="hero__sub">
-      A sentiment analysis of <strong>7,823 mentor–patient conversations</strong> — cross-referenced with 12,400+ public forum posts, 14 peer-reviewed studies, and 3 national surveys. What patients share when they feel safe enough to be&nbsp;honest.
-    </p>
-
-    <div class="hero__actions">
-      <a href="#summary" class="btn btn--mint">Read the report <span class="btn__arrow">↓</span></a>
-      <a href="https://patientpartner.schedulehero.io/campaign/george-kramb?utm_source=sentiment-report&amp;utm_medium=lead-mag&amp;utm_campaign=hero" target="_blank" rel="noopener" class="btn btn--ghost">Book a demo</a>
-    </div>
-
-    <div class="hero__stats">
-      <div class="hero__stat">
-        <div class="hero__stat-num" data-count="7823" data-format="comma">0</div>
-        <div class="hero__stat-label">Conversations<br/>analyzed</div>
-      </div>
-      <div class="hero__stat">
-        <div class="hero__stat-num" data-count="12400" data-format="k">0</div>
-        <div class="hero__stat-label">Forum posts<br/>reviewed</div>
-      </div>
-      <div class="hero__stat">
-        <div class="hero__stat-num" data-count="14">0</div>
-        <div class="hero__stat-label">Peer-reviewed<br/>sources</div>
-      </div>
-      <div class="hero__stat">
-        <div class="hero__stat-num" data-count="6">0</div>
-        <div class="hero__stat-label">Therapy<br/>areas</div>
-      </div>
-    </div>
   </div>
 
   <div class="hero__scroll-hint" aria-hidden="true">
@@ -121,7 +145,7 @@
 <!-- ═══════════════════════════════════════════════════════════════
      EXECUTIVE SUMMARY
      ═══════════════════════════════════════════════════════════════ -->
-<section class="section section--light" id="summary" data-section="Executive summary">
+<section class="section section--light section--topo" id="summary" data-section="Executive summary">
   <div class="wrap">
     <div class="eyebrow reveal">Executive summary</div>
     <h2 class="h-display reveal">
@@ -254,7 +278,7 @@
 <!-- ═══════════════════════════════════════════════════════════════
      FINDING 1 — THE GAP (interactive toggle)
      ═══════════════════════════════════════════════════════════════ -->
-<section class="section section--light" id="gap" data-section="Finding 01 · The gap">
+<section class="section section--teal-wash section--accent-band" id="gap" data-section="Finding 01 · The gap" data-finding="01">
   <div class="wrap">
     <div class="section-num reveal">Finding 01</div>
     <h2 class="h1 reveal">
@@ -374,7 +398,7 @@
 <!-- ═══════════════════════════════════════════════════════════════
      FINDING 2 — FEAR HIERARCHY (animated bars)
      ═══════════════════════════════════════════════════════════════ -->
-<section class="section section--cream" id="fears" data-section="Finding 02 · The fear hierarchy">
+<section class="section section--cream section--lines" id="fears" data-section="Finding 02 · The fear hierarchy" data-finding="02">
   <div class="wrap">
     <div class="section-num reveal">Finding 02</div>
     <h2 class="h1 reveal">
@@ -588,7 +612,7 @@
 <!-- ═══════════════════════════════════════════════════════════════
      FINDING 3 — DECISION TIMELINE (interactive steps)
      ═══════════════════════════════════════════════════════════════ -->
-<section class="section section--navy" id="timeline" data-section="Finding 03 · Decision timeline">
+<section class="section section--navy" id="timeline" data-section="Finding 03 · Decision timeline" data-finding="03">
   <div class="section__bg" aria-hidden="true"></div>
   <div class="wrap">
     <div class="section-num reveal">Finding 03</div>
@@ -669,7 +693,7 @@
 <!-- ═══════════════════════════════════════════════════════════════
      FINDING 4 — SENTIMENT SHIFT (animated dual bars)
      ═══════════════════════════════════════════════════════════════ -->
-<section class="section section--light" id="shift" data-section="Finding 04 · Sentiment shift">
+<section class="section section--mint-tint" id="shift" data-section="Finding 04 · Sentiment shift" data-finding="04">
   <div class="wrap">
     <div class="section-num reveal">Finding 04</div>
     <h2 class="h1 reveal">
@@ -774,7 +798,7 @@
 <!-- ═══════════════════════════════════════════════════════════════
      FINDING 5 — QUESTIONS (filterable table)
      ═══════════════════════════════════════════════════════════════ -->
-<section class="section section--cream" id="questions" data-section="Finding 05 · Questions that predict conversion">
+<section class="section section--cream" id="questions" data-section="Finding 05 · Questions that predict conversion" data-finding="05">
   <div class="wrap">
     <div class="section-num reveal">Finding 05</div>
     <h2 class="h1 reveal">
@@ -894,7 +918,7 @@
 <!-- ═══════════════════════════════════════════════════════════════
      EXTERNAL VALIDATION
      ═══════════════════════════════════════════════════════════════ -->
-<section class="section section--light" id="validation" data-section="External validation">
+<section class="section section--light section--dots" id="validation" data-section="External validation">
   <div class="wrap">
     <div class="section-num reveal">External validation</div>
     <h2 class="h1 reveal">
@@ -962,7 +986,7 @@
 <!-- ═══════════════════════════════════════════════════════════════
      TESTIMONIALS
      ═══════════════════════════════════════════════════════════════ -->
-<section class="section section--light" id="testimonials" data-section="Trusted clients">
+<section class="section section--navy-soft" id="testimonials" data-section="Trusted clients">
   <div class="wrap">
     <div class="eyebrow reveal">Trusted clients</div>
     <h2 class="h1 reveal">
@@ -974,30 +998,116 @@
 
     <hr class="divider-strong reveal" />
 
-    <div class="testimonials">
-      <figure class="t-card reveal">
-        <div class="t-card__mark" aria-hidden="true">&ldquo;</div>
-        <blockquote class="t-card__quote">Patient Partner is a unicorn in the industry, setting a new standard with their clear dedication to the mission of positively impacting patients' lives through innovation and compassionate support.</blockquote>
-        <figcaption class="t-card__attrib">
-          <div class="t-card__name">Melissa B.</div>
-          <div class="t-card__title">Sobi Pharmaceuticals</div>
-        </figcaption>
+    <div class="t-list">
+      <figure class="t-row reveal">
+        <div class="t-row__photo">
+          <img src="assets/testimonial-melissa.jpg" alt="Melissa B., Sobi Pharmaceuticals" loading="lazy" />
+        </div>
+        <div class="t-row__main">
+          <div class="t-row__mark" aria-hidden="true">&ldquo;</div>
+          <blockquote class="t-row__quote">Patient Partner is a unicorn in the industry. They are undoubtedly dedicated to the mission of positively impacting patients lives.</blockquote>
+          <figcaption class="t-row__attrib">
+            <div class="t-row__name">Melissa B.</div>
+            <div class="t-row__title">Sobi Pharmaceuticals</div>
+          </figcaption>
+        </div>
+        <div class="t-row__meta">
+          <div class="t-meta">
+            <div class="t-meta__icon" aria-hidden="true">★</div>
+            <div>
+              <div class="t-meta__label">Industry</div>
+              <div class="t-meta__value">Pharma · Epilepsy</div>
+            </div>
+          </div>
+          <div class="t-meta">
+            <div class="t-meta__icon" aria-hidden="true">⤢</div>
+            <div>
+              <div class="t-meta__label">Company size</div>
+              <div class="t-meta__value">1,800+ employees</div>
+            </div>
+          </div>
+          <div class="t-meta">
+            <div class="t-meta__icon" aria-hidden="true">◎</div>
+            <div>
+              <div class="t-meta__label">Pain point</div>
+              <div class="t-meta__value">Needed a compliant, scalable solution to increase patient adoption and improve patients' understanding of their breakthrough treatment — while also better understanding patient audience and market data.</div>
+            </div>
+          </div>
+        </div>
       </figure>
-      <figure class="t-card reveal">
-        <div class="t-card__mark" aria-hidden="true">&ldquo;</div>
-        <blockquote class="t-card__quote">Patient Partner has been influential in helping patients understand the benefits of our product, providing them with personalized guidance and real-life experiences to support their decision-making.</blockquote>
-        <figcaption class="t-card__attrib">
-          <div class="t-card__name">Brad A.</div>
-          <div class="t-card__title">Mainstay Medical</div>
-        </figcaption>
+
+      <figure class="t-row reveal">
+        <div class="t-row__photo">
+          <img src="assets/testimonial-brad.jpg" alt="Brad A., Mainstay Medical" loading="lazy" />
+        </div>
+        <div class="t-row__main">
+          <div class="t-row__mark" aria-hidden="true">&ldquo;</div>
+          <blockquote class="t-row__quote">Patient Partner has been influential in helping patients understand the benefits of our product.</blockquote>
+          <figcaption class="t-row__attrib">
+            <div class="t-row__name">Brad A.</div>
+            <div class="t-row__title">Mainstay Medical</div>
+          </figcaption>
+        </div>
+        <div class="t-row__meta">
+          <div class="t-meta">
+            <div class="t-meta__icon" aria-hidden="true">★</div>
+            <div>
+              <div class="t-meta__label">Industry</div>
+              <div class="t-meta__value">Medical Device · Spine Surgery</div>
+            </div>
+          </div>
+          <div class="t-meta">
+            <div class="t-meta__icon" aria-hidden="true">⤢</div>
+            <div>
+              <div class="t-meta__label">Company size</div>
+              <div class="t-meta__value">150+ employees</div>
+            </div>
+          </div>
+          <div class="t-meta">
+            <div class="t-meta__icon" aria-hidden="true">◎</div>
+            <div>
+              <div class="t-meta__label">Pain point</div>
+              <div class="t-meta__value">Bringing a new procedure to market — needed to increase patient adoption and awareness for new patient starts.</div>
+            </div>
+          </div>
+        </div>
       </figure>
-      <figure class="t-card reveal">
-        <div class="t-card__mark" aria-hidden="true">&ldquo;</div>
-        <blockquote class="t-card__quote">We knew patient trust was shifting, but seeing just how dramatically patients now prefer peer-to-peer engagement over traditional methods is a game-changer for our upcoming strategies.</blockquote>
-        <figcaption class="t-card__attrib">
-          <div class="t-card__name">Sara W.</div>
-          <div class="t-card__title">Marketing Director · Rare Disease</div>
-        </figcaption>
+
+      <figure class="t-row reveal">
+        <div class="t-row__photo">
+          <img src="assets/testimonial-sara.jpg" alt="Sara W., Marketing Director, Rare Disease" loading="lazy" />
+        </div>
+        <div class="t-row__main">
+          <div class="t-row__mark" aria-hidden="true">&ldquo;</div>
+          <blockquote class="t-row__quote">We knew patient trust was shifting, but seeing just how dramatically patients now prefer peer-to-peer engagement over traditional methods is a game-changer for our upcoming strategies.</blockquote>
+          <figcaption class="t-row__attrib">
+            <div class="t-row__name">Sara W.</div>
+            <div class="t-row__title">Marketing Director</div>
+          </figcaption>
+        </div>
+        <div class="t-row__meta">
+          <div class="t-meta">
+            <div class="t-meta__icon" aria-hidden="true">★</div>
+            <div>
+              <div class="t-meta__label">Industry</div>
+              <div class="t-meta__value">Rare Disease</div>
+            </div>
+          </div>
+          <div class="t-meta">
+            <div class="t-meta__icon" aria-hidden="true">⤢</div>
+            <div>
+              <div class="t-meta__label">Company size</div>
+              <div class="t-meta__value">10,000+ employees</div>
+            </div>
+          </div>
+          <div class="t-meta">
+            <div class="t-meta__icon" aria-hidden="true">◎</div>
+            <div>
+              <div class="t-meta__label">Pain point</div>
+              <div class="t-meta__value">Significant limitations in ability to quantify the ROI of direct-to-patient marketing initiatives. Needed a compliant, focused solution to enhance reported metrics.</div>
+            </div>
+          </div>
+        </div>
       </figure>
     </div>
   </div>
@@ -1066,7 +1176,7 @@
 <!-- ═══════════════════════════════════════════════════════════════
      ROI CALCULATOR — "Estimate your impact"
      ═══════════════════════════════════════════════════════════════ -->
-<section class="section section--cream" id="roi" data-section="Estimate your impact">
+<section class="section section--cream section--grid" id="roi" data-section="Estimate your impact">
   <div class="wrap">
     <div class="section-num reveal">Estimate your impact</div>
     <h2 class="h1 reveal">
@@ -1176,7 +1286,7 @@
 <section class="section section--light ceo-note" id="ceo" data-section="From the founder">
   <div class="wrap ceo-note__wrap">
     <div class="ceo-note__photo reveal">
-      <img src="assets/ceo-george-kramb.webp" alt="George Kramb, Founder &amp; CEO of PatientPartner" />
+      <img src="assets/ceo-george-kramb-v2.jpg" onerror="this.onerror=null;this.src='assets/ceo-george-kramb.webp';" alt="George Kramb, Founder &amp; CEO of PatientPartner" />
       <div class="ceo-note__stamp">
         <div class="ceo-note__stamp-kicker">A note from</div>
         <div class="ceo-note__stamp-name">George Kramb</div>

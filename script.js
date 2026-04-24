@@ -426,3 +426,85 @@
     mapping.forEach(m => spy.observe(m.target));
   }
 })();
+
+/* ═══════════════════════════════════════════════════════════════
+   Hero conversation preview
+   ═══════════════════════════════════════════════════════════════ */
+(() => {
+  const body   = document.getElementById('convoBody');
+  const typing = document.getElementById('convoTyping');
+  if (!body) return;
+
+  /* Real-pattern exchanges from the report findings */
+  const SCRIPTS = [
+    [
+      { who: 'patient', meta: 'Patient · Day 12', text: "Be honest — how bad was the first month? Could you still work? Did your family notice?" },
+      { who: 'mentor',  meta: 'Peer mentor', text: "Yeah. The first 3 weeks were the hardest. I worked from home some days. By week 5 it leveled off — you'll get there." },
+      { who: 'patient', meta: 'Patient', text: "Thank you. My doctor never told me any of that." },
+    ],
+    [
+      { who: 'patient', meta: 'Patient · Day 8', text: "I've been putting this off for 4 months. I'm scared and I don't know if I'm making the right decision." },
+      { who: 'mentor',  meta: 'Peer mentor', text: "I felt the exact same way. What helped me was just talking to someone who'd done it. Want me to walk you through what mine was like?" },
+      { who: 'patient', meta: 'Patient', text: "Yes. Please." },
+    ],
+    [
+      { who: 'patient', meta: 'Patient · Day 21', text: "Can I ask you something personal? Did it affect things… intimately?" },
+      { who: 'mentor',  meta: 'Peer mentor', text: "Yes — first 6 weeks were rough. After that, completely normal. I know that's not the kind of thing you can really ask in clinic." },
+      { who: 'patient', meta: 'Patient', text: "Exactly. I wouldn't even know how." },
+    ],
+    [
+      { who: 'patient', meta: 'Patient · Day 5', text: "If you could go back, would you still choose this treatment?" },
+      { who: 'mentor',  meta: 'Peer mentor', text: "100%. I'd just have started sooner. The fear was worse than the actual experience." },
+    ],
+  ];
+
+  const wait = (ms) => new Promise(r => setTimeout(r, ms));
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const renderMsg = (m) => {
+    const div = document.createElement('div');
+    div.className = `convo__msg convo__msg--${m.who}`;
+    div.innerHTML = `<span class="convo__msg-meta">${m.meta}</span>${m.text}`;
+    body.appendChild(div);
+    /* Auto-scroll to bottom */
+    body.scrollTop = body.scrollHeight;
+    /* Trim if too many messages */
+    while (body.children.length > 5) body.removeChild(body.firstChild);
+  };
+
+  const showTyping = (on) => typing.classList.toggle('is-on', on);
+
+  const playScript = async (script) => {
+    body.innerHTML = '';
+    for (let i = 0; i < script.length; i++) {
+      showTyping(true);
+      await wait(prefersReducedMotion ? 200 : (1100 + Math.random() * 600));
+      showTyping(false);
+      renderMsg(script[i]);
+      await wait(prefersReducedMotion ? 400 : (i === script.length - 1 ? 4000 : 1400));
+    }
+  };
+
+  let idx = 0;
+  const loop = async () => {
+    while (true) {
+      await playScript(SCRIPTS[idx % SCRIPTS.length]);
+      idx++;
+      await wait(prefersReducedMotion ? 200 : 1500);
+    }
+  };
+
+  /* Only run when hero is visible */
+  if ('IntersectionObserver' in window) {
+    const hero = document.querySelector('.hero');
+    let started = false;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting && !started) { started = true; loop(); }
+      });
+    }, { threshold: 0.1 });
+    if (hero) obs.observe(hero);
+  } else {
+    loop();
+  }
+})();
