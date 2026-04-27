@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>What Patients Actually Say — 2026 Sentiment Report · PatientPartner</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="84% of patients withhold a concern from their prescriber. The 2026 Sentiment Report reveals what they actually say — based on 7,823 mentor conversations." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" />
+
+<!-- ═══════════════════════════════════════════════════════════════
+     LANDING — APPROACH B (conversion-optimized, distinctive)
+     A unique editorial / research-authority design built around
+     the strongest hooks from the sentiment report. Above-the-fold
+     email capture · multiple capture points · single big testimonial.
+     For: import to Webflow at patientpartner.com/2026-patient-support-benchmark-report
+     ═══════════════════════════════════════════════════════════════ -->
+
+<style>
+:root {
+  --navy:        #0E2A44;
+  --navy-deep:   #0B1F33;
+  --navy-2:      #183857;
+  --teal:        #419DA5;
+  --teal-dark:   #2F7B84;
+  --mint:        #72CBCF;
+  --mint-light:  #9BE0E3;
+  --pale-aqua:   #D8EDEE;
+  --cream:       #F3F8F8;
+  --paper:       #FBFFFF;
+  --line:        #DCEBEA;
+  --rule:        rgba(14,42,68,0.10);
+  --body:        #1A2F48;
+  --muted:       #526D87;
+  --warm:        #D94A4A;
+  --ease:        cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--body);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; height: auto; }
+button, input, textarea { font-family: inherit; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+/* ── Top bar ── */
+.tb {
+  background: var(--navy);
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 10px 16px;
+}
+.tb a { color: var(--mint); text-decoration: underline; margin-left: 6px; }
+
+/* ── Header ── */
+.hdr {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(251,255,255,0.94);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+}
+.hdr__inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.hdr__logo img { height: 24px; }
+.hdr__nav { display: flex; gap: 26px; margin-left: auto; margin-right: 16px; }
+.hdr__nav a {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.hdr__nav a:hover { color: var(--navy); }
+.hdr__cta {
+  background: var(--navy);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.2s var(--ease);
+}
+.hdr__cta:hover { background: var(--teal); }
+@media (max-width: 800px) { .hdr__nav { display: none; } }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 26px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  border-radius: 12px;
+  border: 0;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  white-space: nowrap;
+}
+.btn--mint {
+  background: var(--mint);
+  color: var(--navy);
+  box-shadow: 0 8px 24px rgba(114,203,207,0.35);
+}
+.btn--mint:hover {
+  background: var(--mint-light);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(114,203,207,0.5);
+}
+.btn--lg { padding: 18px 32px; font-size: 16px; }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  background: var(--navy);
+  color: #fff;
+  padding: 80px 0 100px;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 500px at 85% 110%, rgba(114,203,207,0.20), transparent 60%),
+    radial-gradient(700px 400px at 0% -10%, rgba(65,157,165,0.16), transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 100% 80% at 50% 50%, #000 30%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse 100% 80% at 50% 50%, #000 30%, transparent 90%);
+  pointer-events: none;
+}
+.hero .wrap { position: relative; z-index: 1; }
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+}
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mint);
+  margin-bottom: 24px;
+}
+.hero__eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  background: currentColor;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 5.4vw, 72px);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 28px;
+}
+.hero h1 em { font-style: normal; color: var(--mint); }
+.hero h1 .num {
+  display: inline-block;
+  color: var(--mint);
+  font-style: normal;
+}
+
+.hero__sub {
+  font-size: 17px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.78);
+  margin: 0 0 32px;
+  max-width: 540px;
+}
+.hero__sub strong { color: var(--mint); font-weight: 600; }
+
+/* Hero email-capture card */
+.capture {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 18px;
+  padding: 24px 24px 22px;
+  max-width: 480px;
+}
+.capture__label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mint);
+  margin-bottom: 12px;
+}
+.capture__form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.capture__form input {
+  flex: 1;
+  min-width: 200px;
+  padding: 14px 18px;
+  font-size: 15px;
+  border: 1.5px solid rgba(255,255,255,0.18);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+}
+.capture__form input::placeholder { color: rgba(255,255,255,0.5); }
+.capture__form input:focus { outline: none; border-color: var(--mint); background: rgba(255,255,255,0.10); }
+.capture__legal {
+  margin-top: 12px;
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.5);
+}
+
+/* Hero visual (book mockup) */
+.hero__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero__visual img {
+  width: 100%;
+  max-width: 460px;
+  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.5));
+  transform: rotate(-2deg);
+  transition: transform 0.5s var(--ease);
+}
+.hero__visual img:hover { transform: rotate(0deg) scale(1.02); }
+
+@media (max-width: 900px) {
+  .hero__grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero__visual { order: -1; }
+  .hero__visual img { max-width: 280px; }
+}
+
+/* ── Stat strip ── */
+.strip {
+  background: var(--navy-deep);
+  color: #fff;
+  padding: 36px 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.strip__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.strip__item { text-align: center; }
+.strip__num {
+  font-size: clamp(28px, 2.4vw, 36px);
+  font-weight: 700;
+  color: var(--mint);
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.strip__lbl {
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+@media (max-width: 700px) {
+  .strip__grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ Top bar ═══════════ -->
+<div class="tb">
+  NEW RELEASE: The PerfectPatient AI Mentor. <a href="#">Learn More</a>
+</div>
+
+<!-- ═══════════ Header ═══════════ -->
+<header class="hdr">
+  <div class="wrap hdr__inner">
+    <a href="https://patientpartner.com" class="hdr__logo">
+      <img src="https://raw.githubusercontent.com/PattyFrank/Patients-actually-say/main/assets/logo-horizontal-navy.png" alt="PatientPartner" />
+    </a>
+    <nav class="hdr__nav">
+      <a href="#">Solutions</a>
+      <a href="#">Resources</a>
+      <a href="#">Who We Are</a>
+      <a href="#">Treatment Coverage</a>
+    </nav>
+    <a class="hdr__cta" href="https://patientpartner.schedulehero.io/campaign/george-kramb" target="_blank" rel="noopener">Book a demo</a>
+  </div>
+</header>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero__grid">
+      <div>
+        <div class="hero__eyebrow">2026 Sentiment Report · 12 min read</div>
+        <h1>
+          <span class="num">84%</span> of patients withhold a concern from their <em>prescriber.</em>
+        </h1>
+        <p class="hero__sub">
+          The 2026 Sentiment Report analyses <strong>7,823 mentor–patient conversations</strong> across six therapy areas — and reveals what your patients actually share when they feel safe enough to be honest.
+        </p>
+
+        <div class="capture">
+          <div class="capture__label">Get the full report — instantly</div>
+          <form class="capture__form" data-form="hubspot-placeholder">
+            <input type="email" placeholder="Enter your work email" required />
+            <button class="btn btn--mint" type="submit">Read the report →</button>
+          </form>
+          <p class="capture__legal">Free · No credit card · We'll never share your email.</p>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <img src="https://raw.githubusercontent.com/PattyFrank/Patients-actually-say/main/assets/report-mockup.png" alt="What Patients Actually Say — 2026 Sentiment Report cover" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ Stat strip ═══════════ -->
+<section class="strip">
+  <div class="wrap">
+    <div class="strip__grid">
+      <div class="strip__item">
+        <div class="strip__num">7,823</div>
+        <div class="strip__lbl">Mentor conversations</div>
+      </div>
+      <div class="strip__item">
+        <div class="strip__num">12.4K</div>
+        <div class="strip__lbl">Forum posts reviewed</div>
+      </div>
+      <div class="strip__item">
+        <div class="strip__num">14</div>
+        <div class="strip__lbl">Peer-reviewed sources</div>
+      </div>
+      <div class="strip__item">
+        <div class="strip__num">6</div>
+        <div class="strip__lbl">Therapy areas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ The Gap preview ═══════════ -->
+<style>
+.gap-preview { padding: 100px 0 80px; }
+.gap-preview .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 16px;
+}
+.gap-preview .eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  background: currentColor;
+}
+.gap-preview h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0 0 18px;
+  max-width: 22ch;
+}
+.gap-preview h2 em { font-style: normal; color: var(--teal); }
+.gap-preview .lede {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 60ch;
+  margin: 0 0 48px;
+}
+
+.gap-twin {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.gap-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 36px 36px 32px;
+  position: relative;
+}
+.gap-card--doctor { border-left: 3px solid var(--muted); }
+.gap-card--mentor {
+  border-left: 3px solid var(--teal);
+  background: linear-gradient(135deg, rgba(216,237,238,0.4) 0%, #fff 80%);
+}
+.gap-card__label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.gap-card--mentor .gap-card__label { color: var(--teal); }
+.gap-card__quote {
+  font-size: clamp(18px, 1.7vw, 22px);
+  line-height: 1.45;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--navy);
+  margin: 0 0 20px;
+}
+.gap-card--doctor .gap-card__quote { color: var(--muted); font-weight: 500; }
+.gap-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.gap-card__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--cream);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--muted);
+}
+.gap-card--mentor .gap-card__icon { background: rgba(65,157,165,0.12); color: var(--teal); }
+.gap-card__meta-text {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.gap-arrow {
+  text-align: center;
+  margin: 36px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+.gap-arrow strong { color: var(--teal); font-weight: 700; }
+@media (max-width: 800px) {
+  .gap-twin { grid-template-columns: 1fr; }
+}
+
+/* ── Mid-page capture ── */
+.midcap {
+  background: linear-gradient(135deg, var(--mint) 0%, var(--mint-light) 100%);
+  padding: 64px 0;
+  position: relative;
+  overflow: hidden;
+}
+.midcap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(600px 300px at 0% 100%, rgba(14,42,68,0.08), transparent 60%),
+    radial-gradient(500px 300px at 100% 0%, rgba(255,255,255,0.4), transparent 60%);
+  pointer-events: none;
+}
+.midcap .wrap { position: relative; }
+.midcap__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 48px;
+  align-items: center;
+}
+.midcap__title {
+  font-size: clamp(24px, 2.6vw, 32px);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+.midcap__sub {
+  font-size: 15px;
+  color: var(--navy-2);
+  margin: 0;
+  max-width: 50ch;
+}
+.midcap__form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.midcap__form input {
+  padding: 14px 18px;
+  border: 1.5px solid rgba(14,42,68,0.15);
+  border-radius: 10px;
+  background: #fff;
+  font-size: 15px;
+  width: 280px;
+  color: var(--body);
+}
+.midcap__form input:focus { outline: none; border-color: var(--navy); }
+.midcap__form button {
+  background: var(--navy);
+  color: #fff;
+  padding: 14px 24px;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14.5px;
+  cursor: pointer;
+  transition: background 0.2s var(--ease);
+}
+.midcap__form button:hover { background: var(--navy-deep); }
+@media (max-width: 800px) {
+  .midcap__grid { grid-template-columns: 1fr; gap: 24px; }
+  .midcap__form input { width: 100%; }
+}
+
+/* ── Hero testimonial ── */
+.tx-hero {
+  padding: 100px 0;
+  background: var(--navy);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.tx-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(600px 400px at 50% 0%, rgba(114,203,207,0.14), transparent 70%);
+  pointer-events: none;
+}
+.tx-hero .wrap { position: relative; }
+.tx-hero__inner {
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: center;
+}
+.tx-hero__mark {
+  font-family: Georgia, serif;
+  font-size: 96px;
+  line-height: 0.6;
+  color: var(--mint);
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+.tx-hero__quote {
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 36px;
+}
+.tx-hero__attrib {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+}
+.tx-hero__photo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.tx-hero__name {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.005em;
+}
+.tx-hero__title {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.65);
+  margin-top: 2px;
+}
+.tx-hero__attrib-text { text-align: left; }
+</style>
+
+<section class="gap-preview">
+  <div class="wrap">
+    <div class="eyebrow">A preview · Finding 01</div>
+    <h2>What patients say to doctors vs. what they <em>actually&nbsp;feel.</em></h2>
+    <p class="lede">
+      Across 7,823 mentor conversations, the same pattern emerged in every therapy area: patients bring a different version of themselves to clinical encounters than they bring to peer conversations. Here's one moment from the data.
+    </p>
+
+    <div class="gap-twin">
+      <article class="gap-card gap-card--doctor">
+        <div class="gap-card__label">In the exam room</div>
+        <p class="gap-card__quote">"I understand the treatment plan."</p>
+        <div class="gap-card__meta">
+          <div class="gap-card__icon">⚕</div>
+          <div class="gap-card__meta-text">What patients say to their prescriber</div>
+        </div>
+      </article>
+      <article class="gap-card gap-card--mentor">
+        <div class="gap-card__label">In a mentor conversation</div>
+        <p class="gap-card__quote">"I nodded but I don't really understand why I need this specific drug. Is there something less aggressive?"</p>
+        <div class="gap-card__meta">
+          <div class="gap-card__icon">💬</div>
+          <div class="gap-card__meta-text">What the same patient said to a peer mentor</div>
+        </div>
+      </article>
+    </div>
+
+    <p class="gap-arrow">
+      <strong>71%</strong> of patients in non-initiation studies cite inadequate understanding — but signal comprehension in clinic. <em>Gil-Girbau et al., 2020</em>
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════ Mid-page capture ═══════════ -->
+<section class="midcap">
+  <div class="wrap">
+    <div class="midcap__grid">
+      <div>
+        <h2 class="midcap__title">Read all 5 findings — free.</h2>
+        <p class="midcap__sub">The fear hierarchy. The 72-hour decision window. The 10 questions that predict initiation. Get the full report in your inbox.</p>
+      </div>
+      <form class="midcap__form" data-form="hubspot-placeholder">
+        <input type="email" placeholder="Work email" required />
+        <button type="submit">Send it →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ Hero testimonial ═══════════ -->
+<section class="tx-hero">
+  <div class="wrap">
+    <div class="tx-hero__inner">
+      <div class="tx-hero__mark">"</div>
+      <blockquote class="tx-hero__quote">
+        We knew patient trust was shifting, but seeing just how dramatically patients now prefer peer-to-peer engagement over traditional methods is a <em style="font-style: normal; color: var(--mint);">game-changer</em> for our upcoming strategies.
+      </blockquote>
+      <div class="tx-hero__attrib">
+        <img class="tx-hero__photo" src="https://raw.githubusercontent.com/PattyFrank/Patients-actually-say/main/assets/testimonial-sara.png" alt="Sara W." />
+        <div class="tx-hero__attrib-text">
+          <div class="tx-hero__name">Sara W.</div>
+          <div class="tx-hero__title">Marketing Director · Rare Disease · 10,000+ employees</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ Findings preview ═══════════ -->
+<style>
+.findings { padding: 100px 0 80px; background: var(--cream); }
+.findings__head {
+  max-width: 720px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+.findings__eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 14px;
+}
+.findings__head h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+.findings__head h2 em { font-style: normal; color: var(--teal); }
+.findings__head p {
+  font-size: 16.5px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.f-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.f-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 32px 28px 28px;
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.f-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--teal);
+  box-shadow: 0 16px 32px rgba(14,42,68,0.08);
+}
+.f-card__num {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--teal);
+}
+.f-card__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  margin: 0;
+}
+.f-card__stat {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--teal);
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  margin: 6px 0 4px;
+}
+.f-card__desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .f-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Final capture (urgency framing) ── */
+.final {
+  padding: 100px 0;
+  background: var(--navy);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.final::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(700px 400px at 50% 100%, rgba(114,203,207,0.18), transparent 70%),
+    radial-gradient(500px 350px at 50% 0%, rgba(65,157,165,0.12), transparent 70%);
+  pointer-events: none;
+}
+.final::after {
+  content: "P";
+  position: absolute;
+  right: -100px;
+  bottom: -200px;
+  font-size: 600px;
+  font-weight: 800;
+  color: rgba(155,224,227,0.04);
+  pointer-events: none;
+  user-select: none;
+  line-height: 0.8;
+}
+.final .wrap { position: relative; z-index: 1; }
+.final__eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--mint);
+  margin-bottom: 18px;
+}
+.final h2 {
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0 auto 20px;
+  max-width: 24ch;
+}
+.final h2 em { font-style: normal; color: var(--mint); }
+.final p {
+  font-size: 17px;
+  color: rgba(255,255,255,0.75);
+  max-width: 56ch;
+  margin: 0 auto 36px;
+  line-height: 1.55;
+}
+.final__form {
+  display: flex;
+  gap: 8px;
+  max-width: 540px;
+  margin: 0 auto 12px;
+  flex-wrap: wrap;
+}
+.final__form input {
+  flex: 1;
+  min-width: 220px;
+  padding: 16px 20px;
+  font-size: 15.5px;
+  border: 1.5px solid rgba(255,255,255,0.20);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.07);
+  color: #fff;
+}
+.final__form input::placeholder { color: rgba(255,255,255,0.55); }
+.final__form input:focus { outline: none; border-color: var(--mint); background: rgba(255,255,255,0.12); }
+.final__form button { padding: 16px 30px; font-size: 15.5px; }
+.final__legal {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.04em;
+}
+.final__alt {
+  margin-top: 28px;
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.55);
+}
+.final__alt a { color: var(--mint); text-decoration: underline; }
+
+/* ── Footer ── */
+.ft {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.5);
+  padding: 32px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.ft__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12.5px;
+}
+.ft__inner img { height: 18px; opacity: 0.5; }
+.ft__inner a { color: rgba(255,255,255,0.55); margin-left: 18px; }
+.ft__inner a:hover { color: var(--mint); }
+</style>
+
+<section class="findings">
+  <div class="wrap">
+    <div class="findings__head">
+      <span class="findings__eyebrow">Inside the report</span>
+      <h2>Five findings. <em>One uncomfortable truth.</em></h2>
+      <p>Every finding is built on quantified evidence: real conversations, peer-reviewed studies, and forum-data validation. Here's what's waiting inside.</p>
+    </div>
+
+    <div class="f-grid">
+      <article class="f-card">
+        <div class="f-card__num">FINDING 01 · THE GAP</div>
+        <h3 class="f-card__title">What patients tell doctors vs. what they actually feel</h3>
+        <div class="f-card__stat">88.6%</div>
+        <p class="f-card__desc">of physicians underestimate patient reluctance to start medication. The peer conversations show the real gap.</p>
+      </article>
+      <article class="f-card">
+        <div class="f-card__num">FINDING 02 · FEAR HIERARCHY</div>
+        <h3 class="f-card__title">The 8 fears patients won't say out loud</h3>
+        <div class="f-card__stat">73%</div>
+        <p class="f-card__desc">cite "side effects disrupting daily life" as #1 — but the most underestimated fear is identity loss.</p>
+      </article>
+      <article class="f-card">
+        <div class="f-card__num">FINDING 03 · DECISION TIMELINE</div>
+        <h3 class="f-card__title">When patients really decide — and why most PSPs are too late</h3>
+        <div class="f-card__stat">72 hrs</div>
+        <p class="f-card__desc">median time from first peer conversation to treatment decision. Not 72 days.</p>
+      </article>
+      <article class="f-card">
+        <div class="f-card__num">FINDING 04 · SENTIMENT SHIFT</div>
+        <h3 class="f-card__title">Before and after mentor connection, quantified with NLP</h3>
+        <div class="f-card__stat">+156%</div>
+        <p class="f-card__desc">increase in "intent to act" language post-conversation. Plus 4 other measured dimensions.</p>
+      </article>
+      <article class="f-card">
+        <div class="f-card__num">FINDING 05 · QUESTIONS</div>
+        <h3 class="f-card__title">The 10 questions that predict treatment initiation</h3>
+        <div class="f-card__stat">0/10</div>
+        <p class="f-card__desc">are clinical questions. The questions that move patients aren't about mechanism — they're experiential.</p>
+      </article>
+      <article class="f-card" style="background: var(--navy); color: #fff; border-color: transparent;">
+        <div class="f-card__num" style="color: var(--mint);">+ IMPLICATIONS &amp; ROI</div>
+        <h3 class="f-card__title" style="color: #fff;">Five structural changes — and how to model the impact for your program</h3>
+        <p class="f-card__desc" style="color: rgba(255,255,255,0.75);">A full ROI calculator, FAQ, and methodology section closes the report.</p>
+        <div style="margin-top: auto; font-size: 13px; color: var(--mint); font-weight: 700; letter-spacing: 0.04em;">Get all five findings →</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ Final urgency capture ═══════════ -->
+<section class="final">
+  <div class="wrap">
+    <span class="final__eyebrow">The full 12-min read</span>
+    <h2>What your patients are saying — to <em>everyone&nbsp;but&nbsp;you.</em></h2>
+    <p>Free. No credit card. Instant access. The full 2026 Sentiment Report — every finding, every dataset, every implication — in your inbox in 30 seconds.</p>
+    <form class="final__form" data-form="hubspot-placeholder">
+      <input type="email" placeholder="Enter your work email" required />
+      <button class="btn btn--mint" type="submit">Read the report →</button>
+    </form>
+    <p class="final__legal">By submitting your email, you agree to our privacy policy. We'll never share your email.</p>
+    <p class="final__alt">Already a customer? <a href="https://patientpartner.schedulehero.io/campaign/george-kramb" target="_blank" rel="noopener">Book a 20-min walkthrough with our team →</a></p>
+  </div>
+</section>
+
+<!-- ═══════════ Footer ═══════════ -->
+<footer class="ft">
+  <div class="wrap ft__inner">
+    <span>© 2026 PatientPartner · All rights reserved</span>
+    <span>
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+      <a href="https://patientpartner.com">patientpartner.com</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
